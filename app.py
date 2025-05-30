@@ -61,11 +61,17 @@ if url == 'https://taxifare.lewagon.ai/predict':
 
 ## Finally, we can display the prediction to the user
 '''
-params = {"pickup_datetime" = " ".join(date, time), "pickup_longitude" = deplon,
+
+if st.button('Predict the fare'):
+    print('button clicked!')
+    st.write('Fare predicted: ')
+    params = {"pickup_datetime" = " ".join(date, time), "pickup_longitude" = deplon,
             "pickup_latitude" = deplat, "dropoff_longitude" = droplon,
             "dropoff_latitude" = droplat, "passenger_count" = passcount}
 
-apicall = requests.get(url, timeout = 10)
+    apicall = requests.get(url, timeout = 10)
 
-#prediction = apicall.json()
-st.json(apicall)
+    #prediction = apicall.json()
+    st.json(apicall)
+else:
+    st.write('(Press button to predict fare)')
