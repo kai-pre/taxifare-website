@@ -56,10 +56,6 @@ map.fit_bounds([min(route), max(route)], padding = [10, 10])
 
 imap = streamlit_folium.st_folium(map)
 
-print(imap)
-
-
-
 url = 'https://taxifare.lewagon.ai/predict'
 
 if st.button('Predict the fare'):
